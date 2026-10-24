@@ -1,0 +1,4 @@
+timestamp,availability_time,demand_mw,geography,interval,measurement_basis
+2026-01-15T00:00:00-05:00,2026-01-16T00:00:00-05:00,12000,ISO New England,1h,system demand
+2026-01-15T01:00:00-05:00,2026-01-16T00:00:00-05:00,11800,ISO New England,1h,system demand
+2026-01-15T02:00:00-05:00,2026-01-16T00:00:00-05:00,11650,ISO New England,1h,system demand

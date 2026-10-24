@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="OmniGridX sample-only energy screening comparison">
+    <title>OmniGridX | Fast Judge MVP</title>
+    <link rel="stylesheet" href="/assets/index.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="hero">
+        <nav><a class="brand" href="/">OmniGrid<span>X</span></a><span class="demo-badge">Sample-only demo</span></nav>
+        <div class="hero-copy">
+          <div>
+            <p class="eyebrow">Massachusetts commercial-site screening</p>
+            <h1>See how one site could use energy differently.</h1>
+            <p class="lede">Three schedules. One frozen sample. Transparent cost, resilience, emissions, and clean-energy outcomes.</p>
+          </div>
+        </div>
+        <div class="run-meta">
+          <span><b>Sample</b> {{ report.sample_id }}</span>
+          <span><b>Manifest ID</b> {{ report.manifest.identifier }}</span>
+          <span><b>Manifest fingerprint</b> {{ report.manifest.fingerprint }}</span>
+          <span><b>Report fingerprint</b> {{ report.report_fingerprint }}</span>
+        </div>
+      </header>
+
+      <main>
+        <section class="section-heading">
+          <div><p class="eyebrow">Checked comparison</p><h2>Dispatch alternatives</h2></div>
+          <p>All schedules use identical inputs and pass an independent constraint checker.</p>
+        </section>
+        <section class="alternatives">
+          {% for item in report.alternatives %}
+          <article class="alternative{% if item.alternative == 'optimized' %} featured{% endif %}">
+            <div class="card-heading">
+              <div><span class="eyebrow">{{ item.alternative|replace('_', ' ') }}</span><h2>{{ titles[item.alternative] }}</h2></div>
+              <span class="status">{{ item.independent_checker.status }}</span>
+            </div>
+            <div class="cost">
+              <strong>{{ quantity(item.metrics.operating_cost.amount) }}</strong>
+              <span>{{ item.metrics.operating_cost.label }}</span>
+            </div>
+            <dl class="metrics">
+              <div><dt>Schedule</dt><dd>{{ item.schedule.id }}</dd></div>
+              <div><dt>Peak import</dt><dd>{{ quantity(item.metrics.peak_import) }}</dd></div>
+              <div><dt>Critical service</dt><dd>{{ percentage(item.metrics.critical_service_fraction) }}</dd></div>
+              <div><dt>Outage status</dt><dd>{{ item.metrics.outage_service.status }}</dd></div>
+              <div><dt>Critical unserved</dt><dd>{{ quantity(item.metrics.outage_service.critical_unserved_energy) }}</dd></div>
+              <div><dt>Interruption duration</dt><dd>{{ quantity(item.metrics.outage_service.interruption_duration) }}</dd></div>
+              <div><dt>Purchased emissions</dt><dd>{{ quantity(item.metrics.purchased_electricity_emissions.estimate) }}</dd></div>
+              <div><dt>Gross exports</dt><dd>{{ quantity(item.metrics.purchased_electricity_emissions.gross_export_reported_separately) }}</dd></div>
+              <div><dt>Clean-energy share</dt><dd>{{ percentage(item.metrics.clean_energy_share.share) }}</dd></div>
+            </dl>
+            <div class="card-footer">
+              <span>Solver status: {{ item.solver.status }}</span>
+              <span>Independent check: {{ item.independent_checker.status }} ({{ item.independent_checker.tolerance_version }})</span>
+              <span>{{ item.metrics.outage_service.label }}: {{ item.metrics.outage_service.disclosure }}</span>
+            </div>
+          </article>
+          {% endfor %}
+        </section>
+
+        {% set rate = report.alternatives[0].metrics.operating_cost.rate_configuration %}
+        <section class="disclosure">
+          <div><p class="eyebrow">Sample rate configuration</p><h2>{{ rate.id }} {{ rate.version }}</h2></div>
+          <dl class="metrics">
+            <div><dt>Effective period</dt><dd>{{ rate.effective_period[0] }} to {{ rate.effective_period[1] }}</dd></div>
+            <div><dt>Currency and units</dt><dd>{{ rate.currency }} · {{ rate.units }}</dd></div>
+            <div><dt>Source or assumption</dt><dd>{{ rate.source_or_assumption }}</dd></div>
+            <div><dt>Exclusions</dt><dd>{{ rate.exclusions|join(', ') }}</dd></div>
+            <div><dt>Disclosure</dt><dd>{{ report.alternatives[0].metrics.operating_cost.disclaimer }}</dd></div>
+          </dl>
+        </section>
+
+        <section class="details-grid">
+          <article class="panel">
+            <p class="eyebrow">What this is</p><h2>Assumptions</h2>
+            <ul>{% for item in report.assumptions %}<li>{{ item }}</li>{% endfor %}</ul>
+          </article>
+          <article class="panel muted">
+            <p class="eyebrow">What this is not</p><h2>Exclusions</h2>
+            <ul>{% for item in report.exclusions %}<li>{{ item }}</li>{% endfor %}</ul>
+          </article>
+        </section>
+
+        <section class="disclosure">
+          <div><p class="eyebrow">Read before using</p><h2>Screening disclosures</h2></div>
+          <ol>{% for item in report.disclosures %}<li><span>{{ "%02d"|format(loop.index) }}</span>{{ item }}</li>{% endfor %}</ol>
+        </section>
+      </main>
+      <footer><span>{{ report.label }} · schema {{ report.schema_version }}</span><span>No login · No uploads · No customer data</span></footer>
+    </div>
+  </body>
+</html>

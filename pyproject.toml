@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools==75.6.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "omnigridx"
+version = "0.1.0"
+description = "Advisory Massachusetts commercial-site energy screening"
+readme = "README.md"
+requires-python = ">=3.13,<3.14"
+dependencies = [
+    "Jinja2==3.1.5",
+    "scipy==1.15.1",
+    "starlette==0.41.3",
+    "uvicorn==0.34.0",
+]
+
+[project.scripts]
+omnigridx-smoke = "omnigridx.web.smoke:main"
+omnigridx-submission-check = "omnigridx.submission:main"
+
+[project.optional-dependencies]
+test = [
+    "hypothesis==6.122.3",
+    "pytest==8.3.4",
+]
+dev = [
+    "build==1.2.2.post1",
+    "hypothesis==6.122.3",
+    "mypy==1.14.1",
+    "pytest==8.3.4",
+    "setuptools==75.6.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"omnigridx.infrastructure" = [
+    "data/massachusetts/2026.1/*.json",
+    "data/sample/*.json",
+]
+"omnigridx.web" = ["static/*.html", "static/assets/*", "templates/*.html"]
+
+[tool.pytest.ini_options]
+addopts = "--strict-config --strict-markers"
+testpaths = ["tests"]
+
+[tool.mypy]
+python_version = "3.13"
+strict = true
+files = ["src", "tests"]

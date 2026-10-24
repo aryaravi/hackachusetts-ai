@@ -1,0 +1,21 @@
+{
+  "schema_version": "policy-record/1.0",
+  "records": [
+    {
+      "id": "ma-energy-policy-context-2026",
+      "issuer": "Commonwealth of Massachusetts",
+      "title": "Massachusetts energy policy context",
+      "canonical_url": "https://www.mass.gov/massachusetts-energy-data",
+      "publication_date": "2026-01-15",
+      "effective_period": "2026",
+      "jurisdiction": "Massachusetts",
+      "customer_applicability": "not evaluated from public fixture data",
+      "asset_applicability": "not evaluated from public fixture data",
+      "supersession_status": "current in fixture",
+      "successor_url": null,
+      "reviewer": "OmniGridX fixture reviewer",
+      "review_status": "reviewed",
+      "use": "informational"
+    }
+  ]
+}

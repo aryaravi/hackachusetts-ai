@@ -1,0 +1,297 @@
+{
+  "1.1 Create the modular-monolith package skeleton and pinned dependency files": [
+    {
+      "name": "package skeleton smoke test",
+      "argv": ["python3", "-m", "pytest", "tests/unit/test_package.py"],
+      "timeout_seconds": 30
+    },
+    {
+      "name": "strict type check",
+      "argv": ["make", "type-check"],
+      "timeout_seconds": 120
+    },
+    {
+      "name": "package build",
+      "argv": ["make", "package"],
+      "timeout_seconds": 120
+    }
+  ],
+  "1.2 Implement supported Kiro task hooks and minimal steering guidance": [
+    {
+      "name": "task hook self-check",
+      "argv": ["python3", ".kiro/hooks/task_validation.py", "self-check"],
+      "timeout_seconds": 10
+    },
+    {
+      "name": "strict type check",
+      "argv": ["make", "type-check"],
+      "timeout_seconds": 120
+    },
+    {
+      "name": "package build",
+      "argv": ["make", "package"],
+      "timeout_seconds": 120
+    }
+  ],
+  "3.1 Implement content-addressed snapshots and append-only provenance persistence": [
+    {
+      "name": "snapshot and provenance tests",
+      "argv": [
+        "python3",
+        "-m",
+        "pytest",
+        "tests/unit/test_snapshot_repository.py",
+        "tests/integration/test_sqlite_provenance.py"
+      ],
+      "timeout_seconds": 30
+    },
+    {
+      "name": "strict type check",
+      "argv": ["make", "type-check"],
+      "timeout_seconds": 120
+    },
+    {
+      "name": "package build",
+      "argv": ["make", "package"],
+      "timeout_seconds": 120
+    }
+  ],
+  "4.4 Write ingestion boundary and one-million-record benchmark tests": [
+    {
+      "name": "ingestion boundary and benchmark tests",
+      "argv": ["python3", "-m", "pytest", "tests/unit/test_ingestion.py"],
+      "timeout_seconds": 120
+    },
+    {
+      "name": "strict type check",
+      "argv": ["make", "type-check"],
+      "timeout_seconds": 120
+    },
+    {
+      "name": "package build",
+      "argv": ["make", "package"],
+      "timeout_seconds": 120
+    }
+  ],
+  "5.2 Implement the independent ConstraintChecker with focused tests": [
+    {
+      "name": "independent constraint checker tests",
+      "argv": ["python3", "-m", "pytest", "tests/unit/test_constraint_checker.py"],
+      "timeout_seconds": 30
+    },
+    {
+      "name": "strict type check",
+      "argv": ["make", "type-check"],
+      "timeout_seconds": 120
+    },
+    {
+      "name": "package build",
+      "argv": ["make", "package"],
+      "timeout_seconds": 120
+    }
+  ],
+  "6.2 Implement the SciPy SolverPort adapter and bounded MILP with a known-optimum test": [
+    {
+      "name": "bounded MILP known-optimum test",
+      "argv": ["python3", "-m", "pytest", "tests/unit/test_optimization.py"],
+      "timeout_seconds": 30
+    },
+    {
+      "name": "strict type check",
+      "argv": ["make", "type-check"],
+      "timeout_seconds": 120
+    },
+    {
+      "name": "package build",
+      "argv": ["make", "package"],
+      "timeout_seconds": 120
+    }
+  ],
+  "9.1 Implement all-or-nothing exactly-three orchestration with focused tests": [
+    {
+      "name": "exactly-three orchestration tests",
+      "argv": ["python3", "-m", "pytest", "tests/unit/test_orchestration.py"],
+      "timeout_seconds": 30
+    },
+    {
+      "name": "strict type check",
+      "argv": ["make", "type-check"],
+      "timeout_seconds": 120
+    },
+    {
+      "name": "package build",
+      "argv": ["make", "package"],
+      "timeout_seconds": 120
+    }
+  ],
+  "9.2 Implement report models and exact Fast_Judge_MVP disclosures with snapshot tests": [
+    {
+      "name": "stable report schema and disclosure tests",
+      "argv": ["python3", "-m", "pytest", "tests/unit/test_reporting.py"],
+      "timeout_seconds": 30
+    },
+    {
+      "name": "strict type check",
+      "argv": ["make", "type-check"],
+      "timeout_seconds": 120
+    },
+    {
+      "name": "package build",
+      "argv": ["make", "package"],
+      "timeout_seconds": 120
+    }
+  ],
+  "14.1 Implement the minimal HTML/JSON sample endpoints with focused route tests": [
+    {
+      "name": "minimal sample endpoint route tests",
+      "argv": ["python3", "-m", "pytest", "tests/unit/test_web_routes.py"],
+      "timeout_seconds": 30
+    },
+    {
+      "name": "strict type check",
+      "argv": ["make", "type-check"],
+      "timeout_seconds": 120
+    },
+    {
+      "name": "package build",
+      "argv": ["make", "package"],
+      "timeout_seconds": 120
+    }
+  ],
+  "14.2 Implement deterministic human and JSON report export with compatibility tests": [
+    {
+      "name": "deterministic report export compatibility tests",
+      "argv": ["python3", "-m", "pytest", "tests/unit/test_report_export.py"],
+      "timeout_seconds": 30
+    },
+    {
+      "name": "strict type check",
+      "argv": ["make", "type-check"],
+      "timeout_seconds": 120
+    },
+    {
+      "name": "package build",
+      "argv": ["make", "package"],
+      "timeout_seconds": 120
+    }
+  ],
+  "14.3 Add the deterministic local end-to-end test before deployment": [
+    {
+      "name": "deterministic local end-to-end test",
+      "argv": ["python3", "-m", "pytest", "tests/integration/test_local_end_to_end.py"],
+      "timeout_seconds": 30
+    },
+    {
+      "name": "strict type check",
+      "argv": ["make", "type-check"],
+      "timeout_seconds": 120
+    },
+    {
+      "name": "package build",
+      "argv": ["make", "package"],
+      "timeout_seconds": 120
+    }
+  ],
+  "14.4 Implement fail-closed Render `demo-public` startup with focused configuration tests": [
+    {
+      "name": "fail-closed demo-public startup tests",
+      "argv": ["python3", "-m", "pytest", "tests/unit/test_demo_public_startup.py"],
+      "timeout_seconds": 30
+    },
+    {
+      "name": "strict type check",
+      "argv": ["make", "type-check"],
+      "timeout_seconds": 120
+    },
+    {
+      "name": "package build",
+      "argv": ["make", "package"],
+      "timeout_seconds": 120
+    }
+  ],
+  "14.5 Add local `demo-public` route, readiness, secret, and restart tests": [
+    {
+      "name": "local demo-public restart and route tests",
+      "argv": ["python3", "-m", "pytest", "tests/integration/test_local_end_to_end.py"],
+      "timeout_seconds": 30
+    },
+    {
+      "name": "strict type check",
+      "argv": ["make", "type-check"],
+      "timeout_seconds": 120
+    },
+    {
+      "name": "package build",
+      "argv": ["make", "package"],
+      "timeout_seconds": 120
+    }
+  ],
+  "14.6 Implement the bounded hosted smoke validator with mocked focused tests": [
+    {
+      "name": "bounded hosted smoke validator tests",
+      "argv": ["python3", "-m", "pytest", "tests/unit/test_hosted_smoke.py"],
+      "timeout_seconds": 30
+    },
+    {
+      "name": "strict type check",
+      "argv": ["make", "type-check"],
+      "timeout_seconds": 120
+    },
+    {
+      "name": "package build",
+      "argv": ["make", "package"],
+      "timeout_seconds": 120
+    }
+  ],
+  "14.7 Wire hosted and local judge paths into submission metadata and validators": [
+    {
+      "name": "submission judge-path fixture tests",
+      "argv": ["python3", "-m", "pytest", "tests/unit/test_submission.py"],
+      "timeout_seconds": 30
+    },
+    {
+      "name": "strict type check",
+      "argv": ["make", "type-check"],
+      "timeout_seconds": 120
+    },
+    {
+      "name": "package build",
+      "argv": ["make", "package"],
+      "timeout_seconds": 120
+    }
+  ],
+  "15 Checkpoint - Run all Fast Judge MVP checks": [
+    {
+      "name": "Fast Judge MVP checkpoint",
+      "argv": ["make", "check"],
+      "timeout_seconds": 300
+    },
+    {
+      "name": "strict type check",
+      "argv": ["make", "type-check"],
+      "timeout_seconds": 120
+    },
+    {
+      "name": "package build",
+      "argv": ["make", "package"],
+      "timeout_seconds": 120
+    }
+  ],
+  "16.1 Finalize submission artifacts and automated repository validation": [
+    {
+      "name": "submission artifact and validator tests",
+      "argv": ["python3", "-m", "pytest", "tests/unit/test_submission.py"],
+      "timeout_seconds": 30
+    },
+    {
+      "name": "strict type check",
+      "argv": ["make", "type-check"],
+      "timeout_seconds": 120
+    },
+    {
+      "name": "package build",
+      "argv": ["make", "package"],
+      "timeout_seconds": 120
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "sample_id": "massachusetts-commercial-site-sample-v1",
+  "scenario_version_id": "bundled-sample-v1",
+  "created_at": "2026-01-01T00:00:00Z",
+  "intervals": [
+    {
+      "id": "normal",
+      "start": "2026-01-01T00:00:00Z",
+      "duration_hours": "1",
+      "generation_available_kwh": "2",
+      "critical_load_kwh": "1",
+      "noncritical_load_kwh": "0",
+      "grid_available": true,
+      "existing_dispatch": {
+        "generation_dispatched_kwh": "0",
+        "grid_import_kwh": "1",
+        "grid_export_kwh": "0",
+        "battery_charge_kwh": "0",
+        "battery_discharge_kwh": "0",
+        "critical_unserved_kwh": "0",
+        "noncritical_unserved_kwh": "0"
+      }
+    },
+    {
+      "id": "outage",
+      "start": "2026-01-01T01:00:00Z",
+      "duration_hours": "1",
+      "generation_available_kwh": "0",
+      "critical_load_kwh": "1",
+      "noncritical_load_kwh": "0",
+      "grid_available": false,
+      "existing_dispatch": {
+        "generation_dispatched_kwh": "0",
+        "grid_import_kwh": "0",
+        "grid_export_kwh": "0",
+        "battery_charge_kwh": "0",
+        "battery_discharge_kwh": "0",
+        "critical_unserved_kwh": "1",
+        "noncritical_unserved_kwh": "0"
+      }
+    }
+  ],
+  "battery": {
+    "usable_capacity_kwh": "1",
+    "minimum_soc_kwh": "0",
+    "maximum_soc_kwh": "1",
+    "charge_limit_kw": "1",
+    "discharge_limit_kw": "1",
+    "charge_efficiency": "1",
+    "discharge_efficiency": "1",
+    "initial_soc_kwh": "0",
+    "reserve_kwh": "0"
+  },
+  "outage": {
+    "start": "2026-01-01T01:00:00Z",
+    "duration_hours": "1"
+  },
+  "emissions_factor": {
+    "kg_co2e_per_kwh": "0.4",
+    "geography": "ISO-NE sample",
+    "data_year": 2022,
+    "version": "sample-v1",
+    "source": "Bundled synthetic screening assumption"
+  }
+}

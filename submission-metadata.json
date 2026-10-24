@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "status": "draft",
+  "track": "Climate Tech & Clean Energy",
+  "project_name": "OmniGridX",
+  "project_description": "A sample-only Massachusetts commercial-site energy screening demo comparing existing, rule-based, and optimized dispatch with independently checked energy balances and transparent cost, outage, emissions, and clean-energy metrics.",
+  "repository_url": "https://github.com/aryaravi/hackachusetts-ai",
+  "public_demo": {
+    "provider": "Render",
+    "base_url": "REPLACE_WITH_RENDER_HTTPS_URL",
+    "health_path": "/healthz",
+    "report_path": "/api/sample-report",
+    "report_fingerprint": "REPLACE_AFTER_PUBLIC_MODE_RUN"
+  },
+  "local_judge": {
+    "command": "make demo",
+    "test_command": "make check",
+    "url": "http://127.0.0.1:8000",
+    "requires_login": false,
+    "accepts_user_data": false
+  },
+  "data_policy": {
+    "input_scope": "bundled synthetic non-customer sample only",
+    "uploads_enabled": false,
+    "remote_adapters_enabled": false,
+    "contains_secrets": false,
+    "contains_customer_data": false
+  },
+  "video": {
+    "url": "REPLACE_WITH_PUBLIC_VIDEO_URL",
+    "duration_seconds": 0,
+    "approved_hosts": ["youtube.com", "youtu.be", "vimeo.com", "loom.com"]
+  },
+  "team_members": [],
+  "authorized_representative": "REPLACE_WITH_TEAM_MEMBER",
+  "representative_authorized": false,
+  "kiro_evidence": [
+    ".kiro/specs/omnigridx/requirements.md",
+    ".kiro/specs/omnigridx/design.md",
+    ".kiro/specs/omnigridx/tasks.md",
+    ".kiro/hooks/task-checks.json",
+    ".kiro/hooks/task_validation.py",
+    ".kiro/steering/task-validation.md"
+  ],
+  "third_party_notices": "THIRD_PARTY_NOTICES.md",
+  "artifact_license": "LICENSE",
+  "hosting_disclosures": {
+    "cold_start": "The free service may sleep and cold-start, taking up to several minutes to become ready.",
+    "ephemeral_storage": "Storage is ephemeral; every boot rebuilds in-memory state from bundled synthetic bytes and no persistence is claimed.",
+    "free_tier_volatility": "Free-tier availability and limits may change without notice.",
+    "local_fallback": "Run make demo and open http://127.0.0.1:8000."
+  },
+  "final_submission_commit": "REPLACE_AT_SUBMISSION"
+}
