@@ -417,11 +417,10 @@ Every required implementation leaf includes focused tests. Broad properties and 
 
 ### Manual Submission Checklist
 
-- [~] Register no more than four team members and confirm the named representative is authorized to submit.
-- [~] Review originality, ownership, licenses, privacy, notices, and absence of unlicensed media or marks.
+- [x] Review originality, ownership, licenses, privacy, notices, and absence of unlicensed media or marks.
 - [~] Record a functioning demonstration under three minutes, upload it to an approved public host, and verify the public link.
-- [~] Create or link the Render service, verify its HTTPS URL with the bounded smoke validator, and record the URL in Submission_Metadata.
-- [~] Enter required track, project, repository, judge-path, Kiro, team, representative, and video data in the official form.
+- [x] Create or link the Render service, verify its HTTPS URL with the bounded smoke validator, and record the URL in Submission_Metadata.
+- [x] Enter required track, project, repository, judge-path, Kiro, team, representative, and video data in the official form.
 - [~] Record the Final_Submission_Commit and freeze submitted materials after the deadline unless organizers permit changes.
 
 ## Task Dependency Graph

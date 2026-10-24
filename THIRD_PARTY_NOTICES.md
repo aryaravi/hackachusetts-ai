@@ -1,32 +1,32 @@
 # Third-Party Notices
 
-OmniGridX project source, documentation, styles, and synthetic judge scenario are original repository assets under the root `LICENSE`. No third-party marks, music, photographs, customer files, or publisher files/bulk datasets are bundled. The hackathon snapshot contains a small project-authored transcription of attributed public facts and links.
+OmniGridX project source, documentation, styles, and synthetic fixtures are original repository assets under the root `LICENSE`. No third-party logos, brand artwork, music, photographs, customer files, or publisher files/bulk datasets are bundled. Textual product and publisher names are used nominatively for dependency notices and source attribution. The hackathon snapshot contains a small project-authored transcription of attributed public facts and links.
 
 ## Software
 
-| Component | Owner/publisher | Source | License | Use / attribution |
+| Component | Owner/publisher | Source | License | Distribution scope |
 |---|---|---|---|---|
-| Python | Python Software Foundation | https://www.python.org/ | PSF License | Runtime; retain upstream license notice. |
-| React and React DOM | Meta Platforms, Inc. and contributors | https://github.com/facebook/react | MIT | UI and compiled bundle; retain copyright/license. |
-| Vite | Vite contributors | https://github.com/vitejs/vite | MIT | Frontend build; retain copyright/license. |
-| @vitejs/plugin-react | Vite contributors | https://github.com/vitejs/vite-plugin-react | MIT | React build integration; retain copyright/license. |
-| Starlette | Encode OSS Ltd. and contributors | https://github.com/encode/starlette | BSD-3-Clause | HTTP application; retain copyright/license. |
-| Uvicorn | Encode OSS Ltd. and contributors | https://github.com/encode/uvicorn | BSD-3-Clause | ASGI server; retain copyright/license. |
-| Jinja2 | Pallets contributors | https://github.com/pallets/jinja | BSD-3-Clause | Deterministic report export; retain copyright/license. |
-| SciPy | SciPy developers | https://github.com/scipy/scipy | BSD-3-Clause | MILP adapter; retain copyright/license. |
-| NumPy | NumPy developers | https://github.com/numpy/numpy | BSD-3-Clause | SciPy runtime dependency; retain copyright/license. |
-| setuptools | Python Packaging Authority and contributors | https://github.com/pypa/setuptools | MIT | Package build; retain copyright/license. |
-| build | Python Packaging Authority and contributors | https://github.com/pypa/build | MIT | Package build frontend; retain copyright/license. |
-| pytest | pytest contributors | https://github.com/pytest-dev/pytest | MIT | Test runner; retain copyright/license. |
-| Hypothesis | David R. MacIver and contributors | https://github.com/HypothesisWorks/hypothesis | MPL-2.0 | Property tests; modifications to covered files remain MPL-2.0. |
-| mypy | Jukka Lehtosalo and contributors | https://github.com/python/mypy | MIT | Static type checking; retain copyright/license. |
-| Render | Render Services, Inc. | https://render.com/ | Service terms | Optional free-tier hosting; no Render code or marks are bundled. |
+| Python | Python Software Foundation | https://www.python.org/ | PSF License | Runtime platform; not bundled. |
+| React, React DOM, Scheduler | Meta Platforms, Inc. and contributors | https://github.com/facebook/react | MIT | Included in the generated browser bundle; full notice in `THIRD_PARTY_LICENSES.md`. |
+| Vite | Vite contributors | https://github.com/vitejs/vite | MIT | Build-only dependency; not included as a runtime library. |
+| @vitejs/plugin-react | Vite contributors | https://github.com/vitejs/vite-plugin-react | MIT | Build-only dependency. |
+| Starlette | Encode OSS Ltd. and contributors | https://github.com/encode/starlette | BSD-3-Clause | Installed separately by the Python package manager. |
+| Uvicorn | Encode OSS Ltd. and contributors | https://github.com/encode/uvicorn | BSD-3-Clause | Installed separately by the Python package manager. |
+| Jinja2 | Pallets contributors | https://github.com/pallets/jinja | BSD-3-Clause | Installed separately by the Python package manager. |
+| SciPy | SciPy developers | https://github.com/scipy/scipy | BSD-3-Clause | Installed separately by the Python package manager. |
+| NumPy | NumPy developers and third-party licensors | https://github.com/numpy/numpy | Composite metadata: BSD-3-Clause, 0BSD, MIT, Zlib, CC0-1.0 | Installed as SciPy dependency; consult its installed distribution notices. |
+| setuptools | Python Packaging Authority and contributors | https://github.com/pypa/setuptools | MIT | Build-only dependency. |
+| build | Python Packaging Authority and contributors | https://github.com/pypa/build | MIT | Local build tool. |
+| pytest | pytest contributors | https://github.com/pytest-dev/pytest | MIT | Test-only dependency. |
+| Hypothesis | David R. MacIver and contributors | https://github.com/HypothesisWorks/hypothesis | MPL-2.0 | Test-only dependency; no modified Hypothesis source is distributed. |
+| mypy | Jukka Lehtosalo and contributors | https://github.com/python/mypy | MIT | Test-only static analysis dependency. |
+| Render | Render Services, Inc. | https://render.com/ | Service terms | Hosting service; no Render software or artwork is bundled. |
 
-Exact direct dependency versions are pinned in `pyproject.toml`, `frontend/package.json`, and `frontend/package-lock.json`. The compiled UI is reproducible with `make frontend-build`.
+Exact direct dependency versions are pinned in `pyproject.toml`, `frontend/package.json`, and `frontend/package-lock.json`. All 115 npm dependency records declare a license: 107 MIT, five ISC, one Apache-2.0, one CC-BY-4.0, and one BSD-3-Clause. Vite/Babel/Browserslist data, including `caniuse-lite`, is build-time input and was not found in the generated runtime assets. Python dependencies are installed as separate distributions and retain their own metadata/notices; the project wheel does not vendor their source.
 
 ## Public-source fact snapshot
 
-`src/omnigridx/infrastructure/data/hackathon/official-data-v1.json` contains limited factual values, project-authored summaries, canonical links, periods, units, and caveats. It does not contain copied publisher reports, images, charts, or bulk datasets. Publisher terms govern use of the linked sources. Content was rephrased for compliance with licensing restrictions.
+`src/omnigridx/infrastructure/data/hackathon/official-data-v1.json` contains limited factual values, project-authored summaries, canonical links, periods, units, and caveats. It does not contain copied publisher reports, images, charts, or bulk datasets. Publisher terms govern use of linked sources. The snapshot remains explicitly `pending_human_validation`; it must not be described as publisher-approved. Content was rephrased for compliance with licensing restrictions.
 
 Referenced first-party publishers and pages:
 
@@ -38,13 +38,22 @@ Referenced first-party publishers and pages:
 - Commonwealth load-management report: https://www.mass.gov/info-details/peak-potential-load-management-for-an-affordable-net-zero-grid
 - U.S. EIA Massachusetts profile: https://www.eia.gov/electricity/state/massachusetts/
 
-The separate Massachusetts reference pack contains project-authored discovery metadata for additional publishers and does not redistribute their source values.
+The Massachusetts reference pack contains project-authored discovery metadata and does not redistribute publisher values. The public-business JSON/CSV files are project-authored synthetic schema fixtures, as declared in their adjacent `README.md`.
 
 ## Bundled project assets
 
 | Asset | Origin | License / permission | Intended use |
 |---|---|---|---|
 | `data/sample/judge-scenario-v1.json` | Original fictional OmniGridX sample | Root `LICENSE` | Deterministic calculation; no real site, person, account, bill, meter, or customer measurement. |
+| `data/public_business/2026.1/*` | Original synthetic OmniGridX fixtures | Root `LICENSE` | Schema development only; not official or current data. |
 | `data/hackathon/official-data-v1.json` | Project-authored transcription of attributed public facts | Factual use with source links; publisher terms apply | Context-only simulated report and review workflow. |
-| `frontend/src/` and `src/omnigridx/web/static/index.html` / `assets/index.css` | Original OmniGridX interface | Root `LICENSE` | Full-stack demo presentation. |
-| `src/omnigridx/web/static/assets/app.js` | Vite bundle of original UI plus React/React DOM | Root `LICENSE` for original portions; React MIT for framework code | Browser interface; reproducible from the pinned lockfile. |
+| `frontend/src/` and generated static HTML/CSS | Original OmniGridX interface | Root `LICENSE` | Full-stack demo presentation. |
+| `src/omnigridx/web/static/assets/app.js` | Vite bundle of original UI plus React/React DOM/Scheduler | Root `LICENSE` for original portions; Meta MIT for framework code | Browser interface; reproducible from the pinned lockfile. |
+
+## Technical review record — October 24, 2026
+
+A repository-wide technical review covered all tracked files and Git-history blobs for common credential, private-key, SSN, email, customer-data, binary, media, font, and logo patterns; dependency declarations; generated assets; source/data provenance; license files; notices; and submission disclosures.
+
+No credential, private key, SSN, real customer record, tracked media/font file, or third-party logo/artwork was found. The only email-shaped fixture uses the reserved `.invalid` domain. Generated React code retains upstream license headers, and the full Meta MIT text is distributed in `THIRD_PARTY_LICENSES.md`.
+
+This record is a technical audit, not legal advice, a plagiarism determination, source-website terms acceptance, or trademark clearance. Contributors remain responsible for confirming ownership and authorization to license their work, acceptance of public Git/Kiro metadata, source terms, nominative brand use, and availability of the OmniGridX name. Submission metadata remains draft until its human-owned team, representative, video, and final-commit fields are populated.

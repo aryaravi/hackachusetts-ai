@@ -1,4 +1,12 @@
 .DS_Store
+.env
+.env.*
+!.env.example
+*.key
+*.p12
+*.pem
+*.sqlite
+*.sqlite3
 .hypothesis/
 .mypy_cache/
 .pytest_cache/
