@@ -28,8 +28,17 @@ def test_demo_public_accepts_only_ephemeral_sample_configuration() -> None:
     ] == [
         "/healthz",
         "/",
+        "/overview",
+        "/grid-data",
+        "/clean-options",
+        "/ai-draft",
+        "/approvals",
+        "/sources",
         "/api/sample-report",
         "/api/sample-run",
+        "/api/simulation",
+        "/api/simulation/approvals",
+        "/api/simulation/reset",
         "/assets",
     ]
 

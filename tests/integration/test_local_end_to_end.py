@@ -156,13 +156,14 @@ def test_bundled_sample_runs_end_to_end_from_temporary_snapshot(
         assert metrics["peak_import"] is not None
         assert metrics["critical_service_fraction"] is not None
 
+    assert b"OmniGridX | Grid Intelligence Demo" in html.body
     for label in (
         "Fast_Judge_MVP",
         "Screening_Estimate",
         "Outage_Service_Screening",
         EXPECTED_REPORT_FINGERPRINT,
     ):
-        assert label.encode() in html.body
+        assert label.encode() in report.body
     assert upload.status == 404
     assert customer_data.status == forecasts.status == 404
 
@@ -215,8 +216,17 @@ def test_demo_public_restarts_from_fresh_state_and_denies_other_routes(
         assert [getattr(route, "path") for route in app.routes] == [
             "/healthz",
             "/",
+            "/overview",
+            "/grid-data",
+            "/clean-options",
+            "/ai-draft",
+            "/approvals",
+            "/sources",
             "/api/sample-report",
             "/api/sample-run",
+            "/api/simulation",
+            "/api/simulation/approvals",
+            "/api/simulation/reset",
             "/assets",
         ]
         responses = [await _request(app, "/healthz")]

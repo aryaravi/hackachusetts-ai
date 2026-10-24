@@ -2,37 +2,40 @@
 
 ## What OmniGridX does
 
-OmniGridX is a sample-only Massachusetts commercial-site energy screening application. It runs one frozen synthetic site through exactly three dispatch alternatives: documented existing operation, a deterministic solar-first rule, and a bounded cost-minimizing MILP. This implemented optimization is constrained grid intelligence. A separate constraint checker recomputes each candidate’s balances and physical bounds before the application publishes an all-or-nothing comparison.
+Electrification and new clean generation are changing when New England needs power. OmniGridX presents recent official Massachusetts and ISO New England context, eight clean or flexible resource options, and one independently checked synthetic commercial-site screening.
 
-The React judge interface presents operating cost, peak import, deterministic critical-load service, purchased-electricity emissions, and origin-aware clean-energy share. Values are advisory screening outputs. The public flow accepts no uploads, arbitrary scenarios, customer data, remote sources, or authenticated/private operations. The judge MVP contains no AI, weather, or demand forecasting.
+The calculation path runs exactly three dispatch alternatives: documented existing operation, a deterministic clean-generation-first rule, and a bounded cost-minimizing MILP. This implemented optimization is constrained grid intelligence. A separate constraint checker recomputes each candidate’s balances and physical bounds before publication.
+
+The React interface presents operating cost, maximum site import, deterministic critical-load service and interruption, purchased-electricity emissions, and origin-aware clean-energy share. A separate `Simulated_AI_Draft` combines cited context with unchanged checked report values. It is template-generated; no model or external AI service is called. Four fictional people demonstrate ordered analyst, energy-provider, government-data, and manager review. These acknowledgements are unauthenticated, ephemeral, and incapable of spending or control.
+
+The Fast Judge MVP contains no AI, weather, or demand forecasting. Values remain advisory screening outputs. The public flow accepts no uploads, arbitrary scenarios or URLs, customer data, remote retrieval, authenticated/private operations, real approvals, procurement, or equipment commands.
 
 ## Potential value and adoption
 
-Energy consultants often assemble data, dispatch calculations, assumptions, and reviewer evidence across disconnected tools. OmniGridX demonstrates how one immutable run manifest and one independently checked comparison could make an early screening deliverable easier to reproduce and review. The adoption path is intentionally narrow: validate this sample workflow, then separately add authorized customer inputs, verified account tariffs, qualified engineering review, and production security before making customer-specific conclusions.
+Energy analysts often assemble public context, calculations, assumptions, citations, and reviewer evidence across disconnected tools. OmniGridX demonstrates how one immutable run manifest, one checked comparison, one pinned fact snapshot, and an explicit review sequence could make an early screening deliverable easier to inspect.
 
-This MVP does not establish commercial demand, measured analyst-time savings, tariff accuracy, local-grid feasibility, or production readiness. Those require evidence outside this repository.
+This demo does not establish commercial demand, analyst-time savings, tariff accuracy, local-grid feasibility, government or utility endorsement, production readiness, or legal authorization. Those require evidence and controls outside this repository.
 
 ## Intentional and accessible product design
 
-- Exactly three alternatives prevent strategy proliferation in the judge path.
-- Content hashes, explicit units, source identities, versions, and report fingerprints make outputs traceable.
-- Cost is always labeled `Screening_Estimate`; outage output is deterministic `Outage_Service_Screening`.
-- Public and local demos fail closed to one bundled synthetic sample and expose only health and sample-report routes.
-- The interface uses semantic headings, articles, lists, description lists, native buttons, keyboard-operable controls, live status/error regions, responsive layouts, and reduced-motion styling.
-- Massachusetts public-source entries are attribution and discovery metadata only; source values are not bundled or represented as customer data.
+- Six explicit routes cover overview, grid data, clean options, AI draft, approvals, and sources.
+- Solar, wind, hydro, nuclear, geothermal, storage, demand flexibility, and efficiency are distinguished rather than treated as interchangeable generation.
+- Queue, pipeline, forecast, target, historical, and site metrics retain separate labels and limitations.
+- The existing exactly-three report schema and fingerprint remain unchanged.
+- Cost is always `Screening_Estimate`; outage output is deterministic `Outage_Service_Screening`.
+- The AI and approval experience is visibly simulated and has no real-world authority.
+- The interface uses landmarks, headings, description lists, native controls, `aria-current`, keyboard focus, live errors, responsive layouts, and reduced motion.
 
-The original project contribution is the integration of immutable sample provenance, complete interval accounting, independent physical checks, three transparent dispatch paths, deterministic metrics, and fail-closed delivery into one reviewable judge flow. Third-party libraries provide the declared framework, solver, build, and test capabilities; they are inventoried in `THIRD_PARTY_NOTICES.md`.
+## Public facts and provenance
+
+The manually curated snapshot records limited public facts from ISO New England, the Commonwealth of Massachusetts, and the U.S. Energy Information Administration, with canonical URLs, periods, units, evidence types, and limitations. It was retrieved on October 24, 2026 and is not a live feed or publisher-byte archive. Every record remains pending human validation.
+
+The Fast Judge calculation input remains only `src/omnigridx/infrastructure/data/sample/judge-scenario-v1.json`, an original fictional sample. Public facts provide context and never alter its optimization, metrics, or report fingerprint.
 
 ## Kiro use and evidence
 
-Development used Kiro’s spec workflow through `.kiro/specs/omnigridx/requirements.md`, `.kiro/specs/omnigridx/design.md`, `.kiro/specs/omnigridx/tasks.md`, repository steering, and `.kiro/hooks/task_validation.py` with `.kiro/hooks/task-checks.json`. The hooks validate exact task identity and dependency waves, then map completed tasks to bounded local checks. Property-based tests in `tests/property/` map reproducibility, provenance, and validation-partition properties to named requirements.
+Development used Kiro’s spec workflow through `.kiro/specs/omnigridx/requirements.md`, `.kiro/specs/omnigridx/design.md`, `.kiro/specs/omnigridx/tasks.md`, repository steering, and `.kiro/hooks/task_validation.py` with `.kiro/hooks/task-checks.json`. No quantitative workflow-effect measurement was collected. The repository makes no claim for unrecorded Kiro features, real AI model execution, or measured workflow effects.
 
-Kiro MCP servers and Kiro Powers were not used for product runtime behavior, and no claim is made that they were. No quantitative workflow-effect measurement was collected; the evidence is the tracked spec, hooks, steering, task history, and resulting code. The repository makes no claim for unrecorded Kiro features or tools.
+## Tools and deployment
 
-## Public data and bundled assets
-
-The Massachusetts reference pack records canonical publisher metadata for City of Boston, Commonwealth of Massachusetts, Massachusetts DEP, HIFLD, ISO New England, National Weather Service, NREL, EPA, and EIA sources. These entries support provenance and explain future source qualification; the Fast Judge MVP does not retrieve or redistribute publisher data. Its only calculation input is `src/omnigridx/infrastructure/data/sample/judge-scenario-v1.json`, an original fictional sample covered by the repository `LICENSE`.
-
-## Tools and integrations
-
-The Python backend uses Starlette/Uvicorn, Jinja2, SciPy MILP, and immutable domain records. The frontend uses React and Vite and is compiled to static assets served by the same Python process. Render configuration describes one free Python web service with ephemeral state. Pytest, Hypothesis, mypy, setuptools, and build support local verification and packaging. Full ownership, license, asset, and attribution details are in `THIRD_PARTY_NOTICES.md`.
+The backend uses Starlette/Uvicorn, Jinja2, SciPy MILP, and immutable domain records. React and Vite compile the frontend into the same Python package. Render runs one ephemeral process because the simulated approval sequence is process-local. Pytest, Hypothesis, mypy, setuptools, and build support local verification. Ownership, licenses, sources, and attribution are listed in `THIRD_PARTY_NOTICES.md`.

@@ -1,0 +1,290 @@
+{
+  "schema_version": "official-energy-snapshot-demo/1.0",
+  "snapshot_id": "ma-new-england-official-context-2026-10-24",
+  "retrieved_on": "2026-10-24",
+  "geography": "Massachusetts and ISO New England",
+  "snapshot_kind": "manually curated official-source fact snapshot",
+  "content_note": "Public facts are paraphrased and linked; this file is not an archive of publisher bytes.",
+  "review_status": "pending_human_validation",
+  "sources": [
+    {
+      "id": "iso-ne-celt-2026",
+      "publisher": "ISO New England",
+      "publisher_type": "regional system operator",
+      "title": "2026 Capacity, Energy, Loads, and Transmission outlook",
+      "url": "https://www.iso-ne.com/about/where-we-are-going/regional-electricity-outlook/celt-report/",
+      "reference_period": "2026-2035",
+      "limitation": "Planning forecast; not measured future demand or a guarantee."
+    },
+    {
+      "id": "iso-ne-state-profiles-2026",
+      "publisher": "ISO New England",
+      "publisher_type": "regional system operator",
+      "title": "New England State Profiles",
+      "url": "https://www.iso-ne.com/about/public-affairs/new-england-state-profiles",
+      "reference_period": "2024 results and January 2026 queue",
+      "limitation": "Queue projects may change, withdraw, or never enter operation."
+    },
+    {
+      "id": "ma-storage-target-2026",
+      "publisher": "Commonwealth of Massachusetts",
+      "publisher_type": "state government",
+      "title": "Energy Storage Initiative goals and storage target",
+      "url": "https://www.mass.gov/info-details/esi-goals-storage-target",
+      "reference_period": "installed through 2025; reported February 2026",
+      "limitation": "Pipeline capacity is not installed or operating capacity."
+    },
+    {
+      "id": "ma-clean-power-report-card-2025",
+      "publisher": "Commonwealth of Massachusetts",
+      "publisher_type": "state government",
+      "title": "2025 Massachusetts Climate Report Card — Clean Power",
+      "url": "https://www.mass.gov/info-details/2025-massachusetts-climate-report-card-clean-power",
+      "reference_period": "2025 report card",
+      "limitation": "Broad state accounting statement; not an hourly site generation mix."
+    },
+    {
+      "id": "eia-ma-profile-2024",
+      "publisher": "U.S. Energy Information Administration",
+      "publisher_type": "federal government",
+      "title": "Massachusetts Electricity Profile 2024",
+      "url": "https://www.eia.gov/electricity/state/massachusetts/",
+      "reference_period": "2024",
+      "limitation": "Latest complete annual state profile found; state averages are not customer tariffs."
+    },
+    {
+      "id": "ma-energy-future-2026",
+      "publisher": "Commonwealth of Massachusetts",
+      "publisher_type": "state government",
+      "title": "Executive action to secure Massachusetts' energy future",
+      "url": "https://www.mass.gov/news/governor-healey-takes-action-to-bring-in-10-gw-of-new-energy-save-10-billion-and-promote-energy-independence",
+      "reference_period": "announced March 16, 2026; targets through 2035",
+      "limitation": "Policy targets and projected savings are not completed capacity or measured outcomes."
+    },
+    {
+      "id": "ma-peak-potential-2026",
+      "publisher": "Commonwealth of Massachusetts",
+      "publisher_type": "state government",
+      "title": "Peak Potential: Load Management for an Affordable Net-Zero Grid",
+      "url": "https://www.mass.gov/info-details/peak-potential-load-management-for-an-affordable-net-zero-grid",
+      "reference_period": "final report published April 13, 2026",
+      "limitation": "Policy and technical study context; customer performance requires measurement and verification."
+    }
+  ],
+  "metrics": [
+    {
+      "id": "regional-energy-growth",
+      "label": "Projected New England electricity-use growth",
+      "value": "9",
+      "unit": "%",
+      "period": "2026-2035",
+      "kind": "forecast",
+      "source_id": "iso-ne-celt-2026",
+      "limitation": "Forecast, not observed growth."
+    },
+    {
+      "id": "proposed-resource-queue",
+      "label": "Proposed New England resource queue",
+      "value": "13,966",
+      "unit": "MW",
+      "period": "January 2026",
+      "kind": "pipeline",
+      "source_id": "iso-ne-state-profiles-2026",
+      "limitation": "Proposed; dominated by battery, wind, and solar, but not all projects will be built."
+    },
+    {
+      "id": "demand-response-capacity",
+      "label": "New England demand-response capacity",
+      "value": "408",
+      "unit": "MW",
+      "period": "2024",
+      "kind": "historical",
+      "source_id": "iso-ne-state-profiles-2026",
+      "limitation": "Market result; not a future commitment."
+    },
+    {
+      "id": "demand-response-energy",
+      "label": "New England demand-response reductions",
+      "value": "10",
+      "unit": "GWh",
+      "period": "2024",
+      "kind": "historical",
+      "source_id": "iso-ne-state-profiles-2026",
+      "limitation": "Annual result reported by ISO New England."
+    },
+    {
+      "id": "ma-storage-installed",
+      "label": "Massachusetts installed storage",
+      "value": "1,621",
+      "unit": "MWh",
+      "period": "end of 2025",
+      "kind": "installed",
+      "source_id": "ma-storage-target-2026",
+      "limitation": "Energy capacity, not instantaneous power."
+    },
+    {
+      "id": "ma-storage-pipeline",
+      "label": "Massachusetts reported storage pipeline",
+      "value": "13,289",
+      "unit": "MWh",
+      "period": "reported February 2026",
+      "kind": "pipeline",
+      "source_id": "ma-storage-target-2026",
+      "limitation": "Not installed or guaranteed."
+    },
+    {
+      "id": "ma-clean-load-share",
+      "label": "Massachusetts load met with clean power",
+      "value": ">50",
+      "unit": "%",
+      "period": "2025 report card",
+      "kind": "reported_context",
+      "source_id": "ma-clean-power-report-card-2025",
+      "limitation": "Broad state statement; not a real-time or site-specific mix."
+    },
+    {
+      "id": "ma-net-summer-capacity",
+      "label": "Massachusetts net summer capacity",
+      "value": "11,505",
+      "unit": "MW",
+      "period": "2024",
+      "kind": "historical",
+      "source_id": "eia-ma-profile-2024",
+      "limitation": "Annual state profile value."
+    },
+    {
+      "id": "ma-net-generation",
+      "label": "Massachusetts net generation",
+      "value": "20,914,890",
+      "unit": "MWh",
+      "period": "2024",
+      "kind": "historical",
+      "source_id": "eia-ma-profile-2024",
+      "limitation": "In-state annual generation; not equal to retail load."
+    },
+    {
+      "id": "ma-retail-sales",
+      "label": "Massachusetts retail electricity sales",
+      "value": "49,418,575",
+      "unit": "MWh",
+      "period": "2024",
+      "kind": "historical",
+      "source_id": "eia-ma-profile-2024",
+      "limitation": "Annual retail sales."
+    },
+    {
+      "id": "ma-average-retail-price",
+      "label": "Massachusetts average retail electricity price",
+      "value": "23.94",
+      "unit": "¢/kWh",
+      "period": "2024",
+      "kind": "historical_average",
+      "source_id": "eia-ma-profile-2024",
+      "limitation": "State average; not a verified customer tariff."
+    },
+    {
+      "id": "ma-power-co2",
+      "label": "Massachusetts power-sector carbon dioxide",
+      "value": "8.895",
+      "unit": "million metric tons",
+      "period": "2024",
+      "kind": "historical",
+      "source_id": "eia-ma-profile-2024",
+      "limitation": "EIA in-state generation emissions."
+    },
+    {
+      "id": "ma-new-resource-target",
+      "label": "Massachusetts new-resource policy target",
+      "value": "10",
+      "unit": "GW",
+      "period": "by 2035",
+      "kind": "policy_target",
+      "source_id": "ma-energy-future-2026",
+      "limitation": "Target, not completed capacity."
+    },
+    {
+      "id": "ma-storage-policy-target",
+      "label": "Massachusetts additional-storage policy target",
+      "value": "5",
+      "unit": "GW",
+      "period": "policy direction announced 2026",
+      "kind": "policy_target",
+      "source_id": "ma-energy-future-2026",
+      "limitation": "Power target; do not add directly to MWh storage energy values."
+    }
+  ],
+  "clean_options": [
+    {
+      "id": "solar",
+      "name": "Solar",
+      "category": "generation",
+      "contribution": "Distributed or grid-scale daytime renewable generation.",
+      "evidence": "Massachusetts programs and ISO-NE's proposed-resource context include solar.",
+      "limitation": "Weather-variable; site output requires qualified resource and equipment data.",
+      "source_ids": ["iso-ne-state-profiles-2026", "ma-energy-future-2026"]
+    },
+    {
+      "id": "wind",
+      "name": "Onshore and offshore wind",
+      "category": "generation",
+      "contribution": "Renewable generation that can complement solar production profiles.",
+      "evidence": "Wind is a leading proposed-resource category and part of state policy direction.",
+      "limitation": "Proposed or procured capacity is not operating generation.",
+      "source_ids": ["iso-ne-state-profiles-2026", "ma-energy-future-2026"]
+    },
+    {
+      "id": "hydro",
+      "name": "Hydroelectric supply",
+      "category": "generation_and_imports",
+      "contribution": "Scheduled or dispatchable low-carbon electricity supply.",
+      "evidence": "ISO-NE reports regional clean-resource procurements that include hydro.",
+      "limitation": "Imports and contracts must be distinguished from in-state generation.",
+      "source_ids": ["iso-ne-state-profiles-2026"]
+    },
+    {
+      "id": "nuclear",
+      "name": "Nuclear",
+      "category": "firm_low_carbon_generation",
+      "contribution": "Firm low-carbon electricity generation.",
+      "evidence": "Included in Massachusetts' 2026 all-resources policy direction.",
+      "limitation": "Low-carbon but not renewable; project economics and status require separate review.",
+      "source_ids": ["ma-energy-future-2026"]
+    },
+    {
+      "id": "geothermal",
+      "name": "Geothermal",
+      "category": "generation_or_thermal",
+      "contribution": "Firm generation or building thermal electrification, depending on technology.",
+      "evidence": "Included in Massachusetts' 2026 policy direction.",
+      "limitation": "Electric generation and ground-source building systems are different use cases.",
+      "source_ids": ["ma-energy-future-2026"]
+    },
+    {
+      "id": "storage",
+      "name": "Battery storage",
+      "category": "flexibility_not_generation",
+      "contribution": "Moves electricity across time to support peaks and resilience.",
+      "evidence": "Massachusetts reported 1,621 MWh installed and 13,289 MWh in its pipeline.",
+      "limitation": "Storage is not generation; emissions depend on the charging source.",
+      "source_ids": ["ma-storage-target-2026"]
+    },
+    {
+      "id": "demand-flexibility",
+      "name": "Demand flexibility",
+      "category": "load_management",
+      "contribution": "Shifts or reduces consumption during constrained periods.",
+      "evidence": "ISO-NE reported 408 MW of capacity and 10 GWh of reductions in 2024.",
+      "limitation": "Performance depends on baselines, participation, and measurement rules.",
+      "source_ids": ["iso-ne-state-profiles-2026", "ma-peak-potential-2026"]
+    },
+    {
+      "id": "efficiency",
+      "name": "Energy efficiency",
+      "category": "avoided_demand",
+      "contribution": "Avoids energy use and can reduce infrastructure needs.",
+      "evidence": "Included in ISO-NE forecasts and Massachusetts load-management planning.",
+      "limitation": "Savings require measurement and verification.",
+      "source_ids": ["iso-ne-celt-2026", "ma-peak-potential-2026"]
+    }
+  ]
+}

@@ -37,6 +37,7 @@ where = ["src"]
 
 [tool.setuptools.package-data]
 "omnigridx.infrastructure" = [
+    "data/hackathon/*.json",
     "data/massachusetts/2026.1/*.json",
     "data/sample/*.json",
 ]

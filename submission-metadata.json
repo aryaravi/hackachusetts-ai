@@ -3,7 +3,7 @@
   "status": "draft",
   "track": "Climate Tech & Clean Energy",
   "project_name": "OmniGridX",
-  "project_description": "A sample-only Massachusetts commercial-site energy screening demo comparing existing, rule-based, and optimized dispatch with independently checked energy balances and transparent cost, outage, emissions, and clean-energy metrics.",
+  "project_description": "A full-stack Massachusetts and New England grid-intelligence demo combining pinned official-source context, a checked synthetic site dispatch comparison, and a clearly simulated AI-report human-approval workflow.",
   "repository_url": "https://github.com/aryaravi/hackachusetts-ai",
   "public_demo": {
     "provider": "Render",
@@ -46,7 +46,7 @@
   "artifact_license": "LICENSE",
   "hosting_disclosures": {
     "cold_start": "The free service may sleep and cold-start, taking up to several minutes to become ready.",
-    "ephemeral_storage": "Storage is ephemeral; every boot rebuilds in-memory state from bundled synthetic bytes and no persistence is claimed.",
+    "ephemeral_storage": "State is ephemeral; every boot rebuilds the checked report, simulated approvals are erased, and no persistence is claimed.",
     "free_tier_volatility": "Free-tier availability and limits may change without notice.",
     "local_fallback": "Run make demo and open http://127.0.0.1:8000."
   },
