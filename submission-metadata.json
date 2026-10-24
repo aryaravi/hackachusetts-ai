@@ -7,10 +7,10 @@
   "repository_url": "https://github.com/aryaravi/hackachusetts-ai",
   "public_demo": {
     "provider": "Render",
-    "base_url": "REPLACE_WITH_RENDER_HTTPS_URL",
+    "base_url": "https://omnigridx-judge-demo.onrender.com",
     "health_path": "/healthz",
     "report_path": "/api/sample-report",
-    "report_fingerprint": "REPLACE_AFTER_PUBLIC_MODE_RUN"
+    "report_fingerprint": "cc51d0b58a7313e7f631d117493bbbba0c0f8dcbab5de2eb74a6c37eafd5d530"
   },
   "local_judge": {
     "command": "make demo",
